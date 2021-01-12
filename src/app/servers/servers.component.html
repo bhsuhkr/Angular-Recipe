@@ -1,0 +1,46 @@
+<label>Server Name</label>
+<!-- <input 
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"> -->
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+<button 
+    class="btn btn-primary" 
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{serverCreationStatus}}</p> -->
+
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+
+<!-- <app-warning></app-warning> -->
+
+<app-server *ngFor="let server of servers"></app-server>
+
+
+<!-- <hr>
+<label>User Name</label>
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="userName">
+<p>{{userName}}</p>
+
+<button 
+    class="btn btn-primary" 
+    [disabled]="userName===''"
+(click)="userName = ''">Reset</button> -->
+
+
+<button 
+class="btn btn-primary" 
+(click)="onClickDisplay()">Display Ditails</button>
+<p *ngIf="toggle">password = tuna</p>
+<div 
+*ngFor="let psd of password; let i=index"
+[ngStyle]="{backgroundColor: i>=4 ? 'blue' : 'transparent'}"
+[ngClass]="{'white-text': i>=4}"
+>{{psd}}</div>
