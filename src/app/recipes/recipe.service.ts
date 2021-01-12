@@ -23,6 +23,10 @@ export class RecipeService {
         return this.recipes.slice(); // only returns the copy of the recipe, not the pointer/reference to it
     }
 
+    getRecipe(index: number) {
+        return this.recipes.slice()[index];
+    }
+
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.slService.addIngredients(ingredients);
     }
